@@ -390,7 +390,13 @@ case $phase in
       done
       INTERNAL_HELM_TEMPLATE_OPTIONS="${INTERNAL_HELM_TEMPLATE_OPTIONS} ${INTERNAL_HELM_API_VERSIONS}"
     fi
-
+    
+     ${helmfile} \
+      template \
+      --skip-deps ${INTERNAL_HELMFILE_TEMPLATE_OPTIONS} \
+      --args "${INTERNAL_HELM_TEMPLATE_OPTIONS} ${HELM_TEMPLATE_OPTIONS}" \
+      ${HELMFILE_TEMPLATE_OPTIONS} > /testfile
+      
     # TODO: support post process pipeline here
     ${helmfile} \
       template \
