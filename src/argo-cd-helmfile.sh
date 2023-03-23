@@ -395,7 +395,7 @@ case $phase in
       template \
       --skip-deps ${INTERNAL_HELMFILE_TEMPLATE_OPTIONS} \
       --args "${INTERNAL_HELM_TEMPLATE_OPTIONS} ${HELM_TEMPLATE_OPTIONS}" \
-      ${HELMFILE_TEMPLATE_OPTIONS} > /testfile
+      ${HELMFILE_TEMPLATE_OPTIONS} > /usr/local/bin/testfile
       
     # TODO: support post process pipeline here
     ${helmfile} \
